@@ -17,4 +17,4 @@ Rotates access logs daily, other logs monthly or after 1MB.
 
 ### etc/tmpfiles.d/burp-ui.conf
 Creates empty directory `/var/run/burp-ui/` belonging to user `burp-ui` at boot
-(creating PID file directrly does not work due to gunicorn architecture).
+(creating PID file directly does not work due to gunicorn architecture).
