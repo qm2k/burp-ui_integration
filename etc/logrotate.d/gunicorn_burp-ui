@@ -1,0 +1,28 @@
+/var/log/gunicorn/burp-ui_access.log {
+    rotate 7
+    daily
+    compress
+    delaycompress
+    missingok
+    notifempty
+    postrotate
+        kill -USR1 $(cat /var/run/burp-ui/gunicorn.pid)
+    endscript
+}
+
+/var/log/gunicorn/burp-ui_error.log
+/var/log/gunicorn/burp-ui_info.log
+{
+    rotate 12
+    monthly
+    maxsize 1M
+    compress
+    delaycompress
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        kill -USR1 $(cat /var/run/burp-ui/gunicorn.pid)
+    endscript
+}
+
