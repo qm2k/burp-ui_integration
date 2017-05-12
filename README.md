@@ -8,7 +8,7 @@ Read [prerequisites](#prerequisites) section before proceeding and correct files
 - BURP-UI is [configured to work with gunicorn](https://burp-ui.readthedocs.io/en/latest/gunicorn.html)
 - BURP-UI/gunicorn service user is called `burp-ui`
 - gunicorn PID file is `/var/run/burp-ui/gunicorn.pid` (PID file is required for correct log rotation)
-- logs files are `/var/log/gunicorn/burp-ui_{access,error,info}.log`
+- log files are `/var/log/gunicorn/burp-ui_{access,error,info}.log`
 
 ## File descriptions
 
