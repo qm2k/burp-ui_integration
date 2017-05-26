@@ -18,3 +18,10 @@ Rotates access logs daily, other logs monthly or after 1MB.
 ### etc/tmpfiles.d/burp-ui.conf
 Creates empty directory `/var/run/burp-ui/` belonging to user `burp-ui` at boot
 (creating PID file directly does not work due to gunicorn architecture).
+
+### etc/fail2ban/filter.d/burp-ui-auth.conf
+Filter that catches "Wrong username or password" messages in info log.
+
+### etc/fail2ban/jail.burp-ui
+Enables `burp-ui-auth` filter for `/var/log/gunicorn/burp-ui_info.log`, blocks ports 80 and 8080 when triggered.
+Include contents of this file to your `/etc/fail2ban/jail.local`.
