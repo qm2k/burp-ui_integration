@@ -1,0 +1,7 @@
+# Include this into /etc/fail2ban/jail.local
+
+[burp-ui-auth]
+enabled = true
+port = 80,8080
+logpath = /var/log/gunicorn/burp-ui_info.log
+
